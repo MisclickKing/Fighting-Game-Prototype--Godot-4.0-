@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtwu0gmwpt60"]
+
+[ext_resource type="Texture2D" uid="uid://bjt0ov8wryt7o" path="res://Sprites/Stages/Third-Strike-Subway.jpg" id="1_33tli"]
+[ext_resource type="PackedScene" uid="uid://cnfi1c6hw07n2" path="res://Scenes/Characters/Ryu.tscn" id="3_d6m6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fheyl"]
+size = Vector2(599, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ejsw"]
+size = Vector2(37.25, 373)
+
+[node name="Test Stage" type="Node2D"]
+
+[node name="Third-strike-subway" type="Sprite2D" parent="."]
+position = Vector2(222, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_33tli")
+
+[node name="floor" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(221.5, 215)
+shape = SubResource("RectangleShape2D_fheyl")
+
+[node name="wall1" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2(511, 10)
+shape = SubResource("RectangleShape2D_7ejsw")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(-76, 10)
+shape = SubResource("RectangleShape2D_7ejsw")
+
+[node name="ceiling" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling"]
+position = Vector2(222, -158)
+shape = SubResource("RectangleShape2D_fheyl")
+
+[node name="Ryu" parent="." instance=ExtResource("3_d6m6k")]
+position = Vector2(175, 127)
+
+[node name="Ryu2" parent="." instance=ExtResource("3_d6m6k")]
+position = Vector2(330, 127)
+controller_id = 2
