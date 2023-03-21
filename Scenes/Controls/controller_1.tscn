@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://clnf34uigsm23"]
+[gd_scene load_steps=2 format=3 uid="uid://clnf34uigsm23"]
 
-[node name="Controller1" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/Controls/controller_1.gd" id="1_xdpie"]
+
+[node name="Controller1" type="Node"]
+script = ExtResource("1_xdpie")

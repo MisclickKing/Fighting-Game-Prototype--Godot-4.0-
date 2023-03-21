@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccie8wm7slipb"]
+
+[ext_resource type="Script" path="res://Scripts/Controls/controller_2.gd" id="1_ypgdb"]
+
+[node name="Controller2" type="Node"]
+script = ExtResource("1_ypgdb")
