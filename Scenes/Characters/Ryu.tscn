@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cnfi1c6hw07n2"]
+[gd_scene load_steps=29 format=3 uid="uid://cnfi1c6hw07n2"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Ryu/Ryu.gd" id="1_h5668"]
 [ext_resource type="Texture2D" uid="uid://q84qrdoq4aqc" path="res://Sprites/Characters/Ryu/Ryu_Idle.png" id="2_omyh8"]
@@ -1217,7 +1217,11 @@ _data = {
 "WalkForward": SubResource("Animation_6cmgq")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0whwu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_taaah"]
+resource_local_to_scene = true
+size = Vector2(17, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djocx"]
 resource_local_to_scene = true
 size = Vector2(20, 24)
 
@@ -1241,7 +1245,7 @@ size = Vector2(15, 12.875)
 resource_local_to_scene = true
 size = Vector2(15, 12.875)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0eh6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07ii0"]
 resource_local_to_scene = true
 size = Vector2(40, 100)
 
@@ -1259,11 +1263,20 @@ libraries = {
 "": SubResource("AnimationLibrary_fdfv1")
 }
 
+[node name="HitBoxes" type="Area2D" parent="."]
+
+[node name="Hitbox1" type="CollisionShape2D" parent="HitBoxes"]
+visible = false
+position = Vector2(72, -26)
+shape = SubResource("RectangleShape2D_taaah")
+disabled = true
+debug_color = Color(0.701961, 0, 0.00784314, 0.419608)
+
 [node name="HurtBoxes" type="Area2D" parent="."]
 
 [node name="Hurtbox1" type="CollisionShape2D" parent="HurtBoxes"]
 position = Vector2(-4, -20)
-shape = SubResource("RectangleShape2D_0whwu")
+shape = SubResource("RectangleShape2D_djocx")
 debug_color = Color(0, 0.701961, 0.109804, 0.419608)
 
 [node name="Hurtbox2" type="CollisionShape2D" parent="HurtBoxes"]
@@ -1278,28 +1291,28 @@ debug_color = Color(0, 0.701961, 0.109804, 0.419608)
 
 [node name="Hurtbox4" type="CollisionShape2D" parent="HurtBoxes"]
 visible = false
-position = Vector2(80, -8)
+position = Vector2(90, -8)
 shape = SubResource("RectangleShape2D_gh5bo")
 disabled = true
 debug_color = Color(0, 0.701961, 0.109804, 0.419608)
 
 [node name="Hurtbox5" type="CollisionShape2D" parent="HurtBoxes"]
 visible = false
-position = Vector2(80.25, 8.8125)
+position = Vector2(90.25, 8.8125)
 shape = SubResource("RectangleShape2D_kwewn")
 disabled = true
 debug_color = Color(0, 0.701961, 0.109804, 0.419608)
 
 [node name="Hurtbox6" type="CollisionShape2D" parent="HurtBoxes"]
 visible = false
-position = Vector2(80.25, 26.8125)
+position = Vector2(90.25, 26.8125)
 shape = SubResource("RectangleShape2D_4fhkj")
 disabled = true
 debug_color = Color(0, 0.701961, 0.109804, 0.419608)
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(4, 20)
-shape = SubResource("RectangleShape2D_k0eh6")
+shape = SubResource("RectangleShape2D_07ii0")
 debug_color = Color(0.701961, 0.682353, 0, 0.184314)
 
 [node name="StateManager" type="Node" parent="."]

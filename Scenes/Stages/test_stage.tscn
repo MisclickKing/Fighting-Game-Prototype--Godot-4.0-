@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtwu0gmwpt60"]
+[gd_scene load_steps=8 format=3 uid="uid://dtwu0gmwpt60"]
 
 [ext_resource type="Texture2D" uid="uid://bjt0ov8wryt7o" path="res://Sprites/Stages/Third-Strike-Subway.jpg" id="1_33tli"]
+[ext_resource type="Script" path="res://Scripts/MainGame/test_stage.gd" id="1_k5ja1"]
 [ext_resource type="PackedScene" uid="uid://clnf34uigsm23" path="res://Scenes/Controls/controller_1.tscn" id="2_860nu"]
 [ext_resource type="PackedScene" uid="uid://cnfi1c6hw07n2" path="res://Scenes/Characters/Ryu.tscn" id="3_d6m6k"]
 [ext_resource type="PackedScene" uid="uid://ccie8wm7slipb" path="res://Scenes/Controls/controller_2.tscn" id="4_4ta3w"]
@@ -11,7 +12,8 @@ size = Vector2(599, 36)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ejsw"]
 size = Vector2(37.25, 373)
 
-[node name="Test Stage" type="Node2D"]
+[node name="TestStage" type="Node"]
+script = ExtResource("1_k5ja1")
 
 [node name="Stage" type="Node2D" parent="."]
 
@@ -21,7 +23,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_33tli")
 
 [node name="ceiling" type="StaticBody2D" parent="Stage"]
-collision_layer = 8
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/ceiling"]
@@ -45,7 +47,7 @@ position = Vector2(-76, 10)
 shape = SubResource("RectangleShape2D_7ejsw")
 
 [node name="floor" type="StaticBody2D" parent="Stage"]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/floor"]
@@ -55,7 +57,7 @@ shape = SubResource("RectangleShape2D_fheyl")
 [node name="Controller1" parent="." instance=ExtResource("2_860nu")]
 
 [node name="Ryu" parent="Controller1" instance=ExtResource("3_d6m6k")]
-position = Vector2(145, 127)
+position = Vector2(207, 127)
 
 [node name="Controller2" parent="." instance=ExtResource("4_4ta3w")]
 

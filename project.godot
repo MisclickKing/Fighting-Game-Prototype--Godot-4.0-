@@ -157,4 +157,7 @@ button8_2={
 
 [layer_names]
 
-2d_physics/layer_1="character"
+2d_physics/layer_1="player_character"
+2d_physics/layer_2="ceiling"
+2d_physics/layer_3="wall"
+2d_physics/layer_4="floor"

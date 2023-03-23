@@ -3,6 +3,7 @@ extends Node
 
 # Controller identifier
 const controller_id = 2
+
 var button1 := "button1_%s" % controller_id
 var button2 := "button2_%s" % controller_id
 var button3 := "button3_%s" % controller_id

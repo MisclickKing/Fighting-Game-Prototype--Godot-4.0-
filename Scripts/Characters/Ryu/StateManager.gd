@@ -8,7 +8,7 @@ extends Node
 	BaseState.State.JumpUp : $JumpUp,
 }
 
-var current_state: BaseState
+@onready var current_state: BaseState
 
 func change_state(new_state: int) -> void:
 	if current_state:

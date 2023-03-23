@@ -1,6 +1,5 @@
 extends BaseState
 
-
 func enter() -> void:
 	print("Idle")
 	
