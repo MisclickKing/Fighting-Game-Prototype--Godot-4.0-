@@ -1,8 +1,6 @@
 extends BaseState
 
 func enter() -> void:
-	print("Crouch")
-	
 	player.animation.play("EnterCrouch")
 	player.velocity.y = 0
 	player.velocity.x = 0

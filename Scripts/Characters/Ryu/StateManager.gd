@@ -1,6 +1,5 @@
 extends Node
 
-
 @onready var states = {
 	BaseState.State.Idle : $Idle,
 	BaseState.State.Walk : $Walk,

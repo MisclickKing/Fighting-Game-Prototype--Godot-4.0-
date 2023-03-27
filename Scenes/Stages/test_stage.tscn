@@ -57,9 +57,9 @@ shape = SubResource("RectangleShape2D_fheyl")
 [node name="Controller1" parent="." instance=ExtResource("2_860nu")]
 
 [node name="Ryu" parent="Controller1" instance=ExtResource("3_d6m6k")]
-position = Vector2(207, 127)
+position = Vector2(141, 127)
 
 [node name="Controller2" parent="." instance=ExtResource("4_4ta3w")]
 
 [node name="Ryu" parent="Controller2" instance=ExtResource("3_d6m6k")]
-position = Vector2(312, 127)
+position = Vector2(263, 127)

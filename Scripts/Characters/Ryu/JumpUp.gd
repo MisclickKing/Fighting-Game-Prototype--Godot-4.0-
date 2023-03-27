@@ -23,8 +23,6 @@ func jump(delta):
 		player.animation.play("JumpUpFalling")
 
 func enter() -> void:
-	print("Jump")
-	
 	player.velocity.y = jump_force
 	player.velocity.x = 0
 

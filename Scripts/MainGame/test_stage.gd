@@ -16,8 +16,6 @@ func _process(delta):
 	face_opponent()
 
 
-
-
 # ---------------------------------- #
 #  Makes the players face each other #
 # ---------------------------------- #
@@ -37,12 +35,18 @@ func get_controller_character_distance():
 	controller2_side = controller2_location - controller1_location
 
 # Based on sign value of distance, flip sprite
+##                                      Programmer's Note                                      ##
+#################################################################################################
+# Side note, make the character's name a grabable value when instancing in game for referencing #
+#################################################################################################
 func flip_character():
-	if controller1_side < controller2_side:
-		$Controller1.get_node("Ryu").scale.x = -1
-		$Controller2.get_node("Ryu").scale.x = 1
-	elif controller1_side > controller2_side:
-		$Controller1.get_node("Ryu").scale.x = 1
-		$Controller2.get_node("Ryu").scale.x = -1
-	else:
-		pass
+	# Controller 1
+	$Controller1.get_node("Ryu").get_node("Sprite2D").scale.x = sign(controller1_side)
+	$Controller1.get_node("Ryu").get_node("CollisionBox").position.x = sign(controller1_side)
+	$Controller1.get_node("Ryu").get_node("HurtBoxes").scale.x = sign(controller1_side)
+	$Controller1.get_node("Ryu").get_node("HitBoxes").scale.x = sign(controller1_side)
+	# Controller 2
+	$Controller2.get_node("Ryu").get_node("Sprite2D").scale.x = sign(controller2_side)
+	$Controller2.get_node("Ryu").get_node("CollisionBox").position.x = sign(controller2_side)
+	$Controller2.get_node("Ryu").get_node("HurtBoxes").scale.x = sign(controller2_side)
+	$Controller2.get_node("Ryu").get_node("HitBoxes").scale.x = sign(controller2_side)

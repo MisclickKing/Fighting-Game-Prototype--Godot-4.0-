@@ -1,8 +1,6 @@
 extends BaseState
 
 func enter() -> void:
-	print("Idle")
-	
 	player.velocity.y = 0
 	player.velocity.x = 0
 	
