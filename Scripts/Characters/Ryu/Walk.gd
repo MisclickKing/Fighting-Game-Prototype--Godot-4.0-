@@ -1,8 +1,5 @@
 extends BaseState
 
-var forward_speed = 200
-var backward_speed = 165
-
 func enter() -> void:
 	player.velocity.y = 0
 
@@ -37,20 +34,20 @@ func physics_process(delta: float) -> int:
 func move_left():
 	direction = -1 
 	if player.direction == 'right':
-		speed = backward_speed
+		speed = player.backward_speed
 		player.animation.play("WalkBackward")
 	elif player.direction == 'left':
-		speed = forward_speed
+		speed = player.forward_speed
 		player.animation.play("WalkForward")
 
 func move_right():
 	direction = 1
 	speed = 165
 	if player.direction == 'right':
-		speed = forward_speed
+		speed = player.forward_speed
 		player.animation.play("WalkForward")
 	elif player.direction == 'left':
-		speed = backward_speed
+		speed = player.backward_speed
 		player.animation.play("WalkBackward")
 
 func neutral():

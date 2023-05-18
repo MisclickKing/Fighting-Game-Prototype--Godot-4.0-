@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cnfi1c6hw07n2"]
+[gd_scene load_steps=30 format=3 uid="uid://cnfi1c6hw07n2"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Ryu/Ryu.gd" id="1_h5668"]
 [ext_resource type="Texture2D" uid="uid://q84qrdoq4aqc" path="res://Sprites/Characters/Ryu/Ryu_Idle.png" id="2_omyh8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Characters/Ryu/Walk.gd" id="6_5tpbk"]
 [ext_resource type="Texture2D" uid="uid://bsv8u1bdmwwiy" path="res://Sprites/Characters/Ryu/Ryu_JumpUp.png" id="6_7f62k"]
 [ext_resource type="Script" path="res://Scripts/Characters/Ryu/Crouch.gd" id="6_mf6mn"]
+[ext_resource type="Script" path="res://Scenes/Characters/InputHistory.gd" id="7_wystn"]
 [ext_resource type="Script" path="res://Scripts/Characters/Ryu/JumpUp.gd" id="11_p54yc"]
 [ext_resource type="Script" path="res://Scripts/Characters/Ryu/Idle.gd" id="12_3varu"]
 [ext_resource type="Script" path="res://Scripts/Characters/Ryu/StateManager.gd" id="12_iyw48"]
@@ -1317,6 +1318,9 @@ debug_color = Color(0.701961, 0.682353, 0, 0.184314)
 
 [node name="StateManager" type="Node" parent="."]
 script = ExtResource("12_iyw48")
+
+[node name="InputHistory" type="Node" parent="StateManager"]
+script = ExtResource("7_wystn")
 
 [node name="Idle" type="Node" parent="StateManager"]
 script = ExtResource("12_3varu")
